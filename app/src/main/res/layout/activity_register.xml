@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="15dp"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:gravity="center"
+    android:paddingTop="15dp"
+    tools:context="com.example.jessicachandra.mychatapp.RegisterActivity"
+       >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <EditText
+            android:id="@+id/etNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="nama"
+            android:layout_marginBottom="10dp"
+
+            />
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:layout_marginBottom="10dp"
+
+            />
+
+    <EditText
+        android:id="@+id/etTlp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="no handphone"
+        android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Register"
+            android:paddingBottom="10dp"
+            />
+    <Button
+        android:id="@+id/btLogin"
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+         android:paddingRight="10dp"
+        android:text="Login"
+        android:paddingBottom="10dp"
+    />
+
+</LinearLayout>
