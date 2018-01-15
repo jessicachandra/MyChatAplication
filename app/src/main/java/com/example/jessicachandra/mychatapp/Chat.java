@@ -18,11 +18,13 @@ public class Chat implements Parcelable{
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference chatRef = database.getReference("chats");
 
+    public Chat() {
+
+    }
+
     public void send(){chatRef.push().setValue(this);
     }
 
-    public void Chat() {
-    }
 
     public User getSender() {
         return sender;
@@ -60,9 +62,6 @@ public class Chat implements Parcelable{
         dest.writeString(this.pesan);
         dest.writeValue(this.tanggal);
       }
-
-    public Chat() {
-    }
 
     protected Chat(Parcel in) {
         this.sender = in.readParcelable(User.class.getClassLoader());

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -39,5 +40,21 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
+            btRegister.setOnClickListener(new View.OnClickListener(){
+            @Override
+                    public void onClick (View view) {
+                User user = new User();
+                user.setNama(etNama.getText().toString());
+                user.setTelpon(etTlp.getText().toString());
+                user.setEmail(etEmail.getText().toString());
+
+                user.register();
+                Toast.makeText(RegisterActivity.this,"registration successful",Toast.LENGTH_LONG).show();
+                etNama.setText("");
+                etTlp.setText("");
+                etEmail.setText("");
+            }
+        });
+
 
     }}

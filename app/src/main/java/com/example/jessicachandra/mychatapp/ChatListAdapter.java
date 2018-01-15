@@ -77,13 +77,9 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatsH
                     Date(Long.parseLong(current.getTanggal().toString())));
             tvTanggal.setText(dateString);
             String uid = mylocaldata.getString("uid","");
-            LinearLayout.LayoutParams lp =new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-                    lp.weight =1.0f;
             if (current.getSender().getTelpon().equals (uid)) {
-                lp.gravity = Gravity.LEFT;
                 thischat.setCardBackgroundColor(Color.parseColor("#ffffff"));
             } else {
-                lp.gravity = Gravity.RIGHT;
                 thischat.setCardBackgroundColor(Color.parseColor("#eeffdd"));
             }
             this.position = position;

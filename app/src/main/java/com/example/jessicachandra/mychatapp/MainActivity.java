@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -37,20 +36,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu (Menu menu) {
-    getMenuInflater().inflate(R.menu.main_menu,menu);
-    return true ;
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if (item.getItemId() == R.id.menuLogout){
-            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menuLogout) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
-        }else if (item.getItemId()==R.id.menuUser){
-            startActivity(new Intent(MainActivity.this,UserListActivity.class));
-        }else if(item.getItemId()==R.id.menuprofil){
-            Intent intent = new Intent (MainActivity.this,ProfilActivity.class);
+        } else if (item.getItemId() == R.id.menuUser) {
+            startActivity(new Intent(MainActivity.this, UserListActivity.class));
+        } else if (item.getItemId() == R.id.menuprofil) {
+            Intent intent = new Intent(MainActivity.this, ProfilActivity.class);
             intent.putExtra("user", user);
             startActivity(intent);
         }
@@ -64,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mylocaldata = getSharedPreferences("mylocaldata", MODE_PRIVATE);
         user = getIntent().getParcelableExtra("user");
-        if ( user == null ){
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }
+        //      if ( user == null ){
+        //         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        //        startActivity(intent);
+
 // PEMBACAAN DATA DARI FIREBASE
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -76,38 +75,38 @@ public class MainActivity extends AppCompatActivity {
 
                 chats.clear();
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    Chat chat = postSnapshot.getValue( Chat.class );
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Chat chat = postSnapshot.getValue(Chat.class);
                     chats.add(chat);
                     adapter.notifyDataSetChanged();
                 }
             }
-            @Override
 
-            public void onCancelled(DatabaseError error) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
 // PENGAKTIFAN RecyclerView MENGGUNAKAN ChatListAdapter
-        rvChats = (RecyclerView)findViewById(R.id.rvChats);
+        rvChats = (RecyclerView) findViewById(R.id.rvChats);
         rvChats.setHasFixedSize(true);
         rvChats.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ChatListAdapter(this, chats);
         rvChats.setAdapter(adapter);
-        etKetik = (EditText)findViewById(R.id.etKetik);
-        btSend = (Button)findViewById(R.id.btSend);
+        etKetik = (EditText) findViewById(R.id.etKetik);
+        btSend = (Button) findViewById(R.id.btSend);
         btSend.setOnClickListener(new View.OnClickListener() {
             @Override
 
-            public void onClick(View v) {
+            public void onClick(View view){
                 Chat chat = new Chat();
-                chat.setPesan( etKetik.getText().toString() );
-                chat.setTanggal( new Date().getTime() );
-                chat.setSender( user );
+                chat.setPesan(etKetik.getText().toString());
+                chat.setTanggal(new Date().getTime());
+                chat.setSender(user);
                 chat.send();
                 etKetik.setText("");
             }
-            
+
         });
     }
 }

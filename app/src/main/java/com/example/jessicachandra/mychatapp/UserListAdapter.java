@@ -1,6 +1,7 @@
 package com.example.jessicachandra.mychatapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -43,7 +44,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserHo
         User current = users.get (position);
         holder.setData (current,position);
         holder.setListeners();
-
     }
 
     @Override
@@ -79,6 +79,14 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserHo
         }
 
         public void setListeners() {
+            thisuser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context,ProfilActivity.class);
+                    intent.putExtra("user",current);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

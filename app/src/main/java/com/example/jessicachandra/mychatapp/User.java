@@ -52,6 +52,9 @@ class User implements Parcelable {
         return 0;
     }
 
+    public User(){
+
+    }
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.nama);
@@ -59,15 +62,10 @@ class User implements Parcelable {
         dest.writeString(this.telepon);
      }
 
-    public User() {
-    }
-
     protected User(Parcel in) {
         this.nama = in.readString();
         this.email = in.readString();
         this.telepon = in.readString();
-        this.database = in.readParcelable(FirebaseDatabase.class.getClassLoader());
-        this.userRef = in.readParcelable(DatabaseReference.class.getClassLoader());
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
