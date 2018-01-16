@@ -23,6 +23,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserHo
     private Context context;
 
     SharedPreferences mylocaldata;
+
     public UserListAdapter(Context context ,List<User> users){
         this.context = context;
         inflater= LayoutInflater.from(context);
