@@ -55,8 +55,9 @@ public class LoginActivity extends AppCompatActivity {
                             user.setTelpon(dataSnapshot.child("telepon").getValue(String.class) );
 
                             SharedPreferences.Editor editor = mylocaldata.edit();
-                            editor.putString("uid", String.valueOf(user.getTelpon()));
+                            editor.putString("uid",user.getTelpon());
                             editor.apply();
+                            
                             Intent intent = new Intent(LoginActivity.this,
                                     MainActivity.class);
                             intent.putExtra("user", (Parcelable) user);

@@ -53,7 +53,6 @@ class User implements Parcelable {
     }
 
     public User(){
-
     }
     @Override
     public void writeToParcel(Parcel dest, int flags) {
