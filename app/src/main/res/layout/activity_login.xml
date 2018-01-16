@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+tools:context="com.example.jessicachandra.mychatapp.LoginActivity">
 
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Login"
-       android:textSize="20dp"
-       android:layout_marginBottom="20dp"
-       />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etNomorHp"
-        android:inputType="number"
-        android:maxLines="1"
-        android:hint="nomorhp"
-        android:paddingBottom="15dp"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/btLogin"
-        android:paddingBottom="15dp"
-        />
 
-     <Button
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="Register"
-         android:gravity="center"
-         android:id="@+id/btRegister"
-         />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNomorHp"
+            android:inputType="number"
+            android:maxLines="1"
+            android:hint="nomorhp"
+            android:paddingBottom="15dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:id="@+id/btLogin"
+            android:paddingBottom="15dp"
+            />
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:gravity="center"
+            android:id="@+id/btRegister"
+            />
+
+    </LinearLayout>

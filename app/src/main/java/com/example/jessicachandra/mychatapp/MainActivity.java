@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menuLogout) {
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
+            return true;
         } else if (item.getItemId() == R.id.menuUser) {
             startActivity(new Intent(MainActivity.this, UserListActivity.class));
         } else if (item.getItemId() == R.id.menuprofil) {
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mylocaldata = getSharedPreferences("mylocaldata", MODE_PRIVATE);
         user = getIntent().getParcelableExtra("user");
-        //      if ( user == null ){
-        //         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        //        startActivity(intent);
+      //       if ( user == null ){
+       //         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+         //startActivity(intent);
 
 // PEMBACAAN DATA DARI FIREBASE
         myRef.addValueEventListener(new ValueEventListener() {
