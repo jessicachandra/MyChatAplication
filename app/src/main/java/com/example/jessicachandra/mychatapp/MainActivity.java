@@ -63,49 +63,51 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mylocaldata = getSharedPreferences("mylocaldata", MODE_PRIVATE);
         user = getIntent().getParcelableExtra("user");
-      //       if ( user == null ){
-       //         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-         //startActivity(intent);
+        if (user == null) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
 // PEMBACAAN DATA DARI FIREBASE
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
 
-            public void onDataChange(DataSnapshot dataSnapshot) {
+                public void onDataChange(DataSnapshot dataSnapshot) {
 
-                chats.clear();
+                    chats.clear();
 
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Chat chat = postSnapshot.getValue(Chat.class);
-                    chats.add(chat);
-                    adapter.notifyDataSetChanged();
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        Chat chat = postSnapshot.getValue(Chat.class);
+                        chats.add(chat);
+                        adapter.notifyDataSetChanged();
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
 // PENGAKTIFAN RecyclerView MENGGUNAKAN ChatListAdapter
-        rvChats = (RecyclerView) findViewById(R.id.rvChats);
-        rvChats.setHasFixedSize(true);
-        rvChats.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ChatListAdapter(this, chats);
-        rvChats.setAdapter(adapter);
-        etKetik = (EditText) findViewById(R.id.etKetik);
-        btSend = (Button) findViewById(R.id.btSend);
-        btSend.setOnClickListener(new View.OnClickListener() {
-            @Override
+            rvChats = (RecyclerView) findViewById(R.id.rvChats);
+            rvChats.setHasFixedSize(true);
+            rvChats.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new ChatListAdapter(this, chats);
+            rvChats.setAdapter(adapter);
+            etKetik = (EditText) findViewById(R.id.etKetik);
+            btSend = (Button) findViewById(R.id.btSend);
+            btSend.setOnClickListener(new View.OnClickListener() {
+                @Override
 
-            public void onClick(View view){
-                Chat chat = new Chat();
-                chat.setPesan(etKetik.getText().toString());
-                chat.setTanggal(new Date().getTime());
-                chat.setSender(user);
-                chat.send();
-                etKetik.setText("");
-            }
+                public void onClick(View view) {
+                    Chat chat = new Chat();
+                    chat.setPesan(etKetik.getText().toString());
+                    chat.setTanggal(new Date().getTime());
+                    chat.setSender(user);
+                    chat.send();
+                    etKetik.setText("");
+                }
 
-        });
+            });
+        }
     }
 }
