@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     tools:context="com.example.jessicachandra.mychatapp.MainActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ddeeff"
+        android:background="#ffd700"
         android:layout_weight="1">
 
         <android.support.v7.widget.RecyclerView
@@ -26,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#ffeedd">
+        android:background="#DAA520">
         <EditText
             android:id="@+id/etKetik"
 
@@ -37,7 +36,7 @@
 
         <Button
             android:id="@+id/btSend"
-
+            android:background="#ffd700"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SEND"/>

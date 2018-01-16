@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="15dp"
     android:orientation="vertical"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    android:gravity="center"
-    android:paddingTop="15dp"
+    android:background="#FFD700"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     tools:context="com.example.jessicachandra.mychatapp.RegisterActivity"
        >
 
@@ -19,6 +19,7 @@
             android:text="Register"
             android:gravity="center"
             android:textSize="24dp"
+            android:background="#DAA520"
             android:layout_marginBottom="15dp"
             />
 
@@ -53,7 +54,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="Register"
-            android:paddingBottom="10dp"
+            android:background="#DAA520"
+            android:paddingBottom="20dp"
             />
     <Button
         android:id="@+id/btLogin"
@@ -62,6 +64,8 @@
         android:paddingLeft="10dp"
          android:paddingRight="10dp"
         android:text="Login"
+        android:layout_marginTop="20dp"
+        android:background="#DAA520"
         android:paddingBottom="10dp"
     />
 

@@ -8,6 +8,7 @@ android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#FFD700"
 tools:context="com.example.jessicachandra.mychatapp.LoginActivity">
 
 
@@ -15,6 +16,7 @@ tools:context="com.example.jessicachandra.mychatapp.LoginActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
+            android:gravity="center"
             android:textSize="20dp"
             android:layout_marginBottom="20dp"
             />
@@ -28,19 +30,28 @@ tools:context="com.example.jessicachandra.mychatapp.LoginActivity">
             android:paddingBottom="15dp"
             />
         <Button
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Login"
+            android:gravity="center"
             android:id="@+id/btLogin"
+            android:background="#DAA520"
             android:paddingBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
             />
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Register"
             android:gravity="center"
+            android:background="#DAA520"
             android:id="@+id/btRegister"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
             />
 
     </LinearLayout>

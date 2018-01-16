@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffd700"
     tools:context="com.example.jessicachandra.mychatapp.ProfilActivity">
 
     <TextView
@@ -32,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Email"
+        android:background="#DAA520"
         android:gravity="center"
         android:textSize="20dp"
         />
@@ -41,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Phone"
+        android:background="#DAA520"
         android:gravity="center"
         android:textSize="20dp"
         />
